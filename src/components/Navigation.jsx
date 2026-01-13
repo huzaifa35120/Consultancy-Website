@@ -1,4 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom'
+import { useState } from 'react'
 import Logo from '../assets/targethomes-logo-png.png'
 
 const links = [
@@ -11,6 +12,7 @@ const links = [
 
 function Navigation() {
   const location = useLocation()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <header className="nav">
@@ -26,7 +28,16 @@ function Navigation() {
             <span>Home Solutions</span>
           </span>
         </div>
-        <nav className="nav-links">
+        <button
+          className="mobile-menu-toggle"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           {links.map((link) => (
             <NavLink
               key={link.to}
@@ -34,16 +45,17 @@ function Navigation() {
               className={
                 location.pathname === link.to ? 'active-link' : undefined
               }
+              onClick={() => setMobileMenuOpen(false)}
             >
               {link.label}
             </NavLink>
           ))}
         </nav>
-        <div className="nav-actions">
-          <a className="btn btn-secondary" href="/contact">
+        <div className={`nav-actions ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+          <a className="btn btn-secondary" href="/contact" onClick={() => setMobileMenuOpen(false)}>
             Talk to an advisor
           </a>
-          <a className="btn btn-primary" href="/contact#book">
+          <a className="btn btn-primary" href="/contact#book" onClick={() => setMobileMenuOpen(false)}>
             Book a consult
           </a>
         </div>
