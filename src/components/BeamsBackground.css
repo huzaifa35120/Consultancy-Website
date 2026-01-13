@@ -1,0 +1,34 @@
+.beams-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: #050507;
+}
+
+.beams-canvas {
+  position: absolute;
+  inset: 0;
+  filter: blur(15px);
+}
+
+.beams-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 7, 0.05);
+  backdrop-filter: blur(50px);
+  animation: pulse-overlay 10s ease-in-out infinite;
+}
+
+@keyframes pulse-overlay {
+  0%, 100% {
+    opacity: 0.05;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}

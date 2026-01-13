@@ -40,12 +40,12 @@ const testimonials = [
   {
     name: 'Emily, Dee Why',
     quote:
-      'We avoided a $22k variation because of the scope review and tender comparison Target prepared.',
+      'They found us good builders who did everything professionally. The whole process was smooth and stress-free.',
   },
   {
     name: 'Raj & Priya, Castle Hill',
     quote:
-      'They found us a builder in 3 weeks and stayed on as our eyes and ears during construction.',
+      'Target connected us with reliable builders who completed our project on time and to a high standard. Very professional service.',
   },
 ]
 
@@ -169,10 +169,6 @@ function Home() {
                 <div className="hero-visual-caption">
                   <div className="hero-visual-pill">
                     From first brief to handover — with someone on your side.
-                  </div>
-                  <div className="hero-visual-metric">
-                    <div>Avg. 3 vetted builders</div>
-                    <div>per project shortlist</div>
                   </div>
                 </div>
               </div>

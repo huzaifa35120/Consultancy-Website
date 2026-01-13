@@ -8,10 +8,14 @@ import Contact from './pages/Contact'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import LeadStrip from './components/LeadStrip'
+import ScrollToTop from './components/ScrollToTop'
+import { BeamsBackground } from './components/BeamsBackground'
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+      <BeamsBackground intensity="subtle" />
       <div className="page-shell">
         <LeadStrip />
         <Navigation />
