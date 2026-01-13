@@ -4,7 +4,7 @@ function Footer() {
       <div className="container">
         <div className="footer-top">
           <div>
-            <div className="brand" style={{ color: '#e9eef7' }}>
+            <div className="brand" style={{ color: '#f9fafb' }}>
               Target <span>Home Solutions</span>
             </div>
             <p className="muted">
@@ -26,14 +26,14 @@ function Footer() {
             <h4>Contact</h4>
             <ul>
               <li>
-                <a href="mailto:hello@targethomesolutions.com">
-                  hello@targethomesolutions.com
+                <a href="mailto:ftargethomes@gmail.com">
+                  ftargethomes@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+611300123456">1300 123 456</a>
+                <a href="tel:0424870667">0424 870 667</a>
               </li>
-              <li>Sydney & regional NSW</li>
+              <li>Sydney, NSW</li>
             </ul>
           </div>
           <div>

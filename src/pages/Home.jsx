@@ -64,27 +64,75 @@ const faqs = [
   },
 ]
 
+// Modern monochrome SVG icons
+const IconCustomBuild = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M3 21h18M5 21V7l7-4v18M19 21V11l-7-4M9 9v0M9 13v0M9 17v0M15 13v0M15 17v0" />
+  </svg>
+)
+
+const IconRenovation = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="3" y="11" width="18" height="10" rx="1" />
+    <path d="M7 11V7a5 5 0 0 1 10 0v4M12 15v0" />
+  </svg>
+)
+
+const IconKnockdown = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M3 21h18M5 21V7l7-4v18M19 21V11l-7-4M9 9v0M9 13v0M9 17v0M15 13v0M15 17v0" />
+    <path d="M3 7l18 0" strokeDasharray="2 2" />
+  </svg>
+)
+
+const IconDuplex = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M3 21h8V7H3v14zM13 21h8V7h-8v14zM7 11h4M7 15h4M15 11h4M15 15h4" />
+  </svg>
+)
+
+const IconRural = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M3 21h18M5 21V7l7-4v18M19 21V11l-7-4M9 9v0M9 13v0M9 17v0M15 13v0M15 17v0" />
+    <path d="M2 12h20M12 2v20" strokeDasharray="1 1" opacity="0.3" />
+  </svg>
+)
+
+const IconLuxury = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M3 21h18M5 21V7l7-4v18M19 21V11l-7-4M9 9v0M9 13v0M9 17v0M15 13v0M15 17v0" />
+    <circle cx="12" cy="5" r="1.5" fill="currentColor" />
+  </svg>
+)
+
+const IconApartment = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="3" y="7" width="18" height="14" rx="1" />
+    <path d="M9 7V3a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4M6 11h12M6 15h12M6 19h12" />
+  </svg>
+)
+
+const IconWarehouse = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M3 21h18M3 21V9l9-6 9 6v12M3 9h18M7 21V9M17 21V9M7 13h10M7 17h10" />
+  </svg>
+)
+
 const categories = [
-  { label: 'Custom builds', meta: 'Scoped + tender ready', icon: '🏠' },
-  { label: 'Renovations', meta: 'Kitchen, bath, extensions', icon: '🧱' },
-  { label: 'Knockdown/rebuild', meta: 'DA/CDC guidance', icon: '🏗️' },
-  { label: 'Duplex / multi', meta: 'Investors & families', icon: '🏘️' },
-  { label: 'Rural builds', meta: 'Regional NSW', icon: '🌿' },
-  { label: 'Luxury homes', meta: 'High-spec oversight', icon: '✨' },
-  { label: 'Apartments', meta: 'Fit-outs & refurb', icon: '🏢' },
-  { label: 'Warehouses', meta: 'Commercial light', icon: '🏭' },
+  { label: 'Custom builds', meta: 'Scoped + tender ready', icon: IconCustomBuild },
+  { label: 'Renovations', meta: 'Kitchen, bath, extensions', icon: IconRenovation },
+  { label: 'Knockdown/rebuild', meta: 'DA/CDC guidance', icon: IconKnockdown },
+  { label: 'Duplex / multi', meta: 'Investors & families', icon: IconDuplex },
+  { label: 'Rural builds', meta: 'Regional NSW', icon: IconRural },
+  { label: 'Luxury homes', meta: 'High-spec oversight', icon: IconLuxury },
+  { label: 'Apartments', meta: 'Fit-outs & refurb', icon: IconApartment },
+  { label: 'Warehouses', meta: 'Commercial light', icon: IconWarehouse },
 ]
 
 function Home() {
   return (
     <div>
-      <section
-        className="hero"
-        style={{
-          background:
-            'linear-gradient(115deg, rgba(12,18,32,0.88) 0%, rgba(12,18,32,0.8) 55%, rgba(12,18,32,0.55) 100%), url(https://images.pexels.com/photos/7031403/pexels-photo-7031403.jpeg?auto=compress&cs=tinysrgb&w=1600) center/cover no-repeat',
-        }}
-      >
+      <section className="hero" style={{ background: '#050507' }}>
         <div className="container">
           <div className="hero-grid">
             <div className="hero-card surface">
@@ -166,15 +214,18 @@ function Home() {
               </div>
             </div>
             <div className="categories-grid">
-              {categories.map((cat) => (
-                <div key={cat.label} className="category-card">
-                  <div className="category-icon" aria-hidden="true">
-                    {cat.icon}
+              {categories.map((cat) => {
+                const IconComponent = cat.icon
+                return (
+                  <div key={cat.label} className="category-card">
+                    <div className="category-icon" aria-hidden="true">
+                      <IconComponent />
+                    </div>
+                    <div className="category-title">{cat.label}</div>
+                    <div className="category-meta">{cat.meta}</div>
                   </div>
-                  <div className="category-title">{cat.label}</div>
-                  <div className="category-meta">{cat.meta}</div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </div>
@@ -221,7 +272,7 @@ function Home() {
               summaries. Builders receive qualified leads; you receive advocate
               support and transparency.
             </p>
-            <a className="btn btn-primary" href="/services">
+            <a className="btn btn-secondary" href="/services">
               See how tendering works
             </a>
           </div>
@@ -288,11 +339,11 @@ function Home() {
           </div>
           <div className="strip" style={{ marginTop: '16px' }}>
             <div>
-              Need a template? Grab our checklist “10 Questions to Ask Your
-              Builder.”
+              Ready to start your project? Get in touch for expert guidance and
+              builder referrals.
             </div>
-            <a className="btn btn-secondary" href="/contact#download">
-              Get the checklist
+            <a className="btn btn-secondary" href="/contact">
+              Contact us
             </a>
           </div>
         </div>

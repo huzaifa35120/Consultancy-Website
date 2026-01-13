@@ -1,4 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom'
+import Logo from '../assets/targethomes-logo-png.png'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -15,31 +16,14 @@ function Navigation() {
     <header className="nav">
       <div className="nav-inner">
         <div className="brand">
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-            <span
-              style={{
-                width: 26,
-                height: 26,
-                borderRadius: 9,
-                background:
-                  'conic-gradient(from 200deg, #1f5b7f, #38bdf8, #f4b23f, #1f5b7f)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 10px 24px rgba(15,23,42,0.35)',
-              }}
-            >
-              <span
-                style={{
-                  width: 15,
-                  height: 15,
-                  borderRadius: 6,
-                  background: '#0b1120',
-                  border: '2px solid rgba(248,250,252,0.9)',
-                }}
-              />
-            </span>
-            Target <span>Home Solutions</span>
+          <img
+            src={Logo}
+            alt="Target Home Solutions logo"
+            style={{ height: 85, marginRight: 16 }}
+          />
+          <span>
+            <span style={{ color: '#f9fafb' }}>Target</span>{' '}
+            <span>Home Solutions</span>
           </span>
         </div>
         <nav className="nav-links">
