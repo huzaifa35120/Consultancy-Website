@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { useState } from 'react'
-import Logo from '../assets/targethomes-logo-png.png'
+import Logo from '../assets/targethomelogopng main.png'
 
 const links = [
   { to: '/', label: 'Home' },
